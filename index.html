@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spunk.Casa — Your Digital Home Base</title>
+<meta name="description" content="Work from home, earn from anywhere. Best tools, gear, and side hustles for your digital casa. Affiliate links that fund the SpunkArt empire.">
+<meta name="keywords" content="work from home, remote work, home office setup, side hustles, digital nomad, make money online, SpunkArt">
+<meta property="og:title" content="Spunk.Casa — Your Digital Home Base">
+<meta property="og:description" content="Work from home, earn from anywhere. Best tools, gear, and side hustles.">
+<meta property="og:url" content="https://spunk.casa">
+<link rel="canonical" href="https://spunk.casa">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0a0a0f;--card:#1a1a2e;--border:#2a2a4e;--purple:#bf5af2;--cyan:#00f5d4;--gold:#ffd60a;--green:#32d74b;--text:#e8e8f0;--muted:#888}
+  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .hero{text-align:center;padding:60px 20px 40px;background:radial-gradient(ellipse at center top,rgba(191,90,242,.15) 0%,transparent 70%)}
+  .hero-badge{display:inline-block;background:rgba(191,90,242,.2);border:1px solid rgba(191,90,242,.4);border-radius:50px;padding:6px 18px;font-size:.8rem;color:var(--purple);margin-bottom:20px;letter-spacing:.05em}
+  .hero h1{font-size:clamp(2rem,6vw,3.5rem);font-weight:800;background:linear-gradient(135deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+  .hero p{color:var(--muted);font-size:1.1rem;max-width:520px;margin:0 auto 30px;line-height:1.6}
+  .stat-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:20px}
+  .stat{text-align:center}
+  .stat-num{font-size:1.8rem;font-weight:800;color:var(--cyan)}
+  .stat-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  section{padding:50px 0}
+  .section-header{display:flex;align-items:center;gap:12px;margin-bottom:30px}
+  .section-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+  .section-header h2{font-size:1.5rem;font-weight:700}
+  .section-header p{font-size:.9rem;color:var(--muted);margin-top:2px}
+  /* Setup Categories */
+  .setup-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+  .setup-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;transition:all .3s}
+  .setup-card:hover{border-color:var(--purple);transform:translateY(-3px);box-shadow:0 8px 30px rgba(191,90,242,.2)}
+  .setup-card-header{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .setup-cat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+  .setup-cat-title{font-weight:700;font-size:1rem}
+  .setup-cat-sub{font-size:.8rem;color:var(--muted)}
+  .setup-items{display:flex;flex-direction:column;gap:10px}
+  .setup-item{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:12px;transition:all .2s;cursor:pointer}
+  .setup-item:hover{border-color:var(--cyan);background:rgba(0,245,212,.06)}
+  .setup-item-info{flex:1;min-width:0}
+  .setup-item-name{font-weight:600;font-size:.9rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .setup-item-desc{font-size:.75rem;color:var(--muted)}
+  .setup-item-price{font-weight:700;color:var(--green);font-size:.85rem;white-space:nowrap}
+  .setup-item-badge{font-size:.65rem;background:rgba(255,214,10,.2);color:var(--gold);border:1px solid rgba(255,214,10,.3);border-radius:4px;padding:2px 6px;white-space:nowrap}
+  .amazon-cta{display:inline-block;margin-top:8px;padding:4px 10px;background:rgba(255,153,0,.2);border:1px solid rgba(255,153,0,.4);border-radius:6px;font-size:.7rem;color:#ff9900;cursor:pointer}
+  /* Tools Grid */
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .tool-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:all .3s}
+  .tool-card:hover{border-color:var(--cyan);transform:translateY(-2px)}
+  .tool-logo{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+  .tool-name{font-weight:700;font-size:1rem}
+  .tool-desc{font-size:.8rem;color:var(--muted);line-height:1.5;flex:1}
+  .tool-badge{align-self:flex-start;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700}
+  .badge-free{background:rgba(50,215,75,.15);color:var(--green);border:1px solid rgba(50,215,75,.3)}
+  .badge-paid{background:rgba(191,90,242,.15);color:var(--purple);border:1px solid rgba(191,90,242,.3)}
+  .badge-trial{background:rgba(0,245,212,.15);color:var(--cyan);border:1px solid rgba(0,245,212,.3)}
+  .badge-bonus{background:rgba(255,214,10,.15);color:var(--gold);border:1px solid rgba(255,214,10,.3)}
+  .tool-link{display:block;text-align:center;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border:1px solid rgba(191,90,242,.4);border-radius:8px;font-size:.8rem;font-weight:600;transition:all .2s}
+  .tool-link:hover{background:linear-gradient(135deg,rgba(191,90,242,.5),rgba(0,245,212,.5))}
+  /* Earn Cards */
+  .earn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .earn-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;position:relative;overflow:hidden;transition:all .3s}
+  .earn-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+  .earn-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--purple))}
+  .earn-rank{position:absolute;top:16px;right:16px;width:28px;height:28px;border-radius:50%;background:rgba(255,214,10,.2);border:1px solid rgba(255,214,10,.4);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--gold)}
+  .earn-emoji{font-size:2rem;margin-bottom:10px}
+  .earn-title{font-weight:700;font-size:1rem;margin-bottom:6px}
+  .earn-desc{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:10px}
+  .earn-potential{font-size:.8rem;color:var(--green);font-weight:600}
+  /* Empire Grid */
+  .empire-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .empire-site{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;text-align:center;transition:all .2s}
+  .empire-site:hover{border-color:var(--purple);background:rgba(191,90,242,.08)}
+  .empire-site .e-name{font-weight:700;font-size:.9rem;margin-bottom:4px;color:var(--cyan)}
+  .empire-site .e-desc{font-size:.72rem;color:var(--muted)}
+  /* Tip Section */
+  .tip-section{background:var(--card);border:1px solid rgba(191,90,242,.3);border-radius:20px;padding:30px;text-align:center;margin-top:30px}
+  .tip-btn{display:inline-block;padding:14px 36px;background:linear-gradient(135deg,var(--purple),var(--cyan));border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;border:none;color:#fff;transition:all .3s}
+  .tip-btn:hover{transform:scale(1.05);box-shadow:0 0 20px rgba(191,90,242,.5)}
+  /* Footer */
+  footer{background:var(--card);border-top:1px solid var(--border);text-align:center;padding:30px 20px}
+  footer a{color:var(--cyan);margin:0 8px}
+  footer p{color:var(--muted);font-size:.8rem;margin-top:10px}
+  /* VTR Badge */
+  #vtr-badge{position:fixed;bottom:16px;right:16px;background:rgba(10,10,15,.9);backdrop-filter:blur(10px);border:1px solid var(--border);border-radius:50px;padding:8px 14px;display:flex;align-items:center;gap:8px;font-size:.8rem;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.4)}
+  #vtr-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.85)}}
+  /* Modal */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;align-items:center;justify-content:center}
+  .modal-overlay.open{display:flex}
+  .modal-box{background:#1a1a2e;border:1px solid rgba(191,90,242,.4);border-radius:20px;padding:30px;max-width:380px;width:90%;text-align:center}
+  .modal-box h3{font-size:1.2rem;margin-bottom:10px}
+  .btc-addr{background:rgba(0,0,0,.4);border:1px solid var(--border);border-radius:10px;padding:12px;font-size:.7rem;word-break:break-all;color:var(--cyan);margin:14px 0;cursor:pointer;font-family:monospace}
+  .modal-close{background:rgba(255,255,255,.1);border:none;color:var(--text);padding:10px 24px;border-radius:50px;cursor:pointer;font-size:.9rem}
+  @media(max-width:600px){.stat-row{gap:20px}.hero{padding:40px 16px 30px}}
+</style>
+</head>
+<body>
+
+<!-- Visitor Badge -->
+<div id="vtr-badge">
+  <div id="vtr-dot"></div>
+  <span id="vtr-count">—</span> online
+</div>
+
+<!-- Tip Modal -->
+<div class="modal-overlay" id="tipModal">
+  <div class="modal-box">
+    <div style="font-size:2rem;margin-bottom:10px">🏠</div>
+    <h3>Tip the Casa</h3>
+    <p style="color:var(--muted);font-size:.85rem">Send BTC to support Spunk.Casa & the entire SpunkArt empire</p>
+    <div class="btc-addr" id="btcAddr" onclick="copyBTC()">bc1p06ewdjqrf8lj5lckxgnx3062lgrhzchayv89fgvfw6tu4gk8s78ssshelk</div>
+    <p style="font-size:.75rem;color:var(--muted);margin-bottom:16px">Tap to copy • Every sat is appreciated 🙏</p>
+    <button class="modal-close" onclick="closeTip()">Close</button>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">🏠 DIGITAL HOME BASE</div>
+  <h1>Spunk.Casa</h1>
+  <p>Work from anywhere. Earn from everywhere. Your ultimate guide to the digital home life — tools, gear, and side hustles that actually pay.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Tools Listed</div></div>
+    <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Cost to Start</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Earning Potential</div></div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- Home Office Setup -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(255,153,0,.15);color:#ff9900">🖥️</div>
+      <div>
+        <h2>Home Office Setup Guide</h2>
+        <p>Everything you need to build a productive work-from-home setup — affiliate links help fund this free resource</p>
+      </div>
+    </div>
+    <div class="setup-grid">
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(255,153,0,.15)">💻</div>
+          <div>
+            <div class="setup-cat-title">Computing</div>
+            <div class="setup-cat-sub">The brains of your casa</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=macbook+m3+pro&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">💻</span>
+            <div class="setup-item-info"><div class="setup-item-name">MacBook Pro M3</div><div class="setup-item-desc">Best performance for remote work & creative work</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$1,599</div><div class="setup-item-badge">TOP PICK</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=logitech+mx+keys+keyboard&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">⌨️</span>
+            <div class="setup-item-info"><div class="setup-item-name">Logitech MX Keys</div><div class="setup-item-desc">Ergonomic typing for all-day comfort</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$99</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=logitech+mx+master+3+mouse&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🖱️</span>
+            <div class="setup-item-info"><div class="setup-item-name">Logitech MX Master 3</div><div class="setup-item-desc">Precision mouse with multi-device support</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$79</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(0,245,212,.15)">🖥️</div>
+          <div>
+            <div class="setup-cat-title">Display</div>
+            <div class="setup-cat-sub">See everything clearly</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=ultrawide+monitor+curved+34+inch&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🖥️</span>
+            <div class="setup-item-info"><div class="setup-item-name">34" Ultrawide Curved</div><div class="setup-item-desc">Replace two monitors, double your productivity</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$349</div><div class="setup-item-badge">TOP PICK</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=monitor+arm+dual+ergotron&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🦾</span>
+            <div class="setup-item-info"><div class="setup-item-name">Ergotron Monitor Arm</div><div class="setup-item-desc">Clean desk, adjustable height, better posture</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$49</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=ring+light+camera+streaming&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">💡</span>
+            <div class="setup-item-info"><div class="setup-item-name">Ring Light + Webcam Bundle</div><div class="setup-item-desc">Look professional on every video call</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$59</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(191,90,242,.15)">🪑</div>
+          <div>
+            <div class="setup-cat-title">Comfort</div>
+            <div class="setup-cat-sub">Your body will thank you</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=ergonomic+office+chair+lumbar+support&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🪑</span>
+            <div class="setup-item-info"><div class="setup-item-name">Ergonomic Office Chair</div><div class="setup-item-desc">Lumbar support for 8+ hour work days</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$249</div><div class="setup-item-badge">ESSENTIAL</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=standing+desk+adjustable+electric&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">📐</span>
+            <div class="setup-item-info"><div class="setup-item-name">Electric Standing Desk</div><div class="setup-item-desc">Sit/stand all day, boost energy & health</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$299</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=blue+light+glasses+computer&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">👓</span>
+            <div class="setup-item-info"><div class="setup-item-name">Blue Light Glasses</div><div class="setup-item-desc">Reduce eye strain during long screen sessions</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$19</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(50,215,75,.15)">🎧</div>
+          <div>
+            <div class="setup-cat-title">Audio</div>
+            <div class="setup-cat-sub">Sound like a pro</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=sony+wh1000xm5+noise+cancelling&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🎧</span>
+            <div class="setup-item-info"><div class="setup-item-name">Sony WH-1000XM5</div><div class="setup-item-desc">Best-in-class noise cancelling for focus</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$279</div><div class="setup-item-badge">TOP PICK</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=blue+yeti+usb+microphone&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🎙️</span>
+            <div class="setup-item-info"><div class="setup-item-name">Blue Yeti USB Mic</div><div class="setup-item-desc">Crystal clear audio for calls, podcasts, streams</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$89</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=white+noise+machine+office&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🔊</span>
+            <div class="setup-item-info"><div class="setup-item-name">White Noise Machine</div><div class="setup-item-desc">Block distractions, enter deep work mode</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$29</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(255,214,10,.15)">⚡</div>
+          <div>
+            <div class="setup-cat-title">Power & Connectivity</div>
+            <div class="setup-cat-sub">Never lose connection</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=anker+usb+c+hub+docking+station&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🔌</span>
+            <div class="setup-item-info"><div class="setup-item-name">Anker USB-C Docking Station</div><div class="setup-item-desc">One cable, connect everything on your desk</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$79</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=ups+battery+backup+surge+protector&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🔋</span>
+            <div class="setup-item-info"><div class="setup-item-name">UPS Battery Backup</div><div class="setup-item-desc">Power outage protection for remote workers</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$69</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=wifi+6+router+mesh+ax3000&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">📡</span>
+            <div class="setup-item-info"><div class="setup-item-name">WiFi 6 Router</div><div class="setup-item-desc">Lag-free video calls and fast uploads</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$119</div></div>
+          </a>
+        </div>
+      </div>
+      <div class="setup-card">
+        <div class="setup-card-header">
+          <div class="setup-cat-icon" style="background:rgba(0,245,212,.15)">📦</div>
+          <div>
+            <div class="setup-cat-title">Organization</div>
+            <div class="setup-cat-sub">A clean space = clear mind</div>
+          </div>
+        </div>
+        <div class="setup-items">
+          <a href="https://www.amazon.com/s?k=cable+management+box+desk+organizer&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">📦</span>
+            <div class="setup-item-info"><div class="setup-item-name">Cable Management Box</div><div class="setup-item-desc">Hide cables, clean your desk instantly</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$24</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=desk+pad+large+extended+mousepad&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🖱️</span>
+            <div class="setup-item-info"><div class="setup-item-name">XL Desk Pad</div><div class="setup-item-desc">Full-desk mousepad, premium feel</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$19</div></div>
+          </a>
+          <a href="https://www.amazon.com/s?k=drawer+organizer+desktop+storage&tag=spunk01-20" target="_blank" rel="noopener" class="setup-item">
+            <span style="font-size:1.3rem">🗂️</span>
+            <div class="setup-item-info"><div class="setup-item-name">Desktop Organizer Set</div><div class="setup-item-desc">Trays, drawers, pen holders — all-in-one</div></div>
+            <div style="text-align:right"><div class="setup-item-price">~$35</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remote Work Tools -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(0,245,212,.15);color:var(--cyan)">🛠️</div>
+      <div>
+        <h2>Best Remote Work Tools</h2>
+        <p>Software and services that make working from home actually work</p>
+      </div>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card" style="border-color:rgba(0,245,212,.3)">
+        <div class="tool-logo" style="background:rgba(0,245,212,.15)">⚙️</div>
+        <div class="tool-name">Make.com</div>
+        <div class="tool-badge badge-free">FREE PLAN</div>
+        <div class="tool-desc">Automate your entire workflow — connect apps, schedule tasks, build AI bots. Save 10+ hours per week doing nothing.</div>
+        <a href="https://www.make.com/en/register?pc=spunk" target="_blank" rel="noopener" class="tool-link">Automate Free →</a>
+      </div>
+      <div class="tool-card" style="border-color:rgba(191,90,242,.3)">
+        <div class="tool-logo" style="background:rgba(191,90,242,.15)">🎨</div>
+        <div class="tool-name">Leonardo AI</div>
+        <div class="tool-badge badge-free">FREE CREDITS</div>
+        <div class="tool-desc">Generate professional images for your clients, projects, and social media. Compete with design agencies from your casa.</div>
+        <a href="https://app.leonardo.ai/?via=spunkart" target="_blank" rel="noopener" class="tool-link">Get Free Credits →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo" style="background:rgba(255,255,255,.08)">🛡️</div>
+        <div class="tool-name">NordVPN</div>
+        <div class="tool-badge badge-paid">BEST VPN</div>
+        <div class="tool-desc">Protect your home network while working remotely. Access geo-restricted resources, stay secure on public WiFi.</div>
+        <a href="https://nordvpn.com/?utm_medium=affiliate&utm_term=spunkart" target="_blank" rel="noopener" class="tool-link">Stay Secure →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo" style="background:rgba(0,245,212,.15)">💼</div>
+        <div class="tool-name">Fiverr</div>
+        <div class="tool-badge badge-free">FREE TO JOIN</div>
+        <div class="tool-desc">Sell your skills globally from your home office — writing, design, code, voiceover, video. Start earning today.</div>
+        <a href="https://www.fiverr.com/s/spunkart" target="_blank" rel="noopener" class="tool-link">Start Selling →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo" style="background:rgba(255,214,10,.15)">🎨</div>
+        <div class="tool-name">Canva Pro</div>
+        <div class="tool-badge badge-trial">FREE TRIAL</div>
+        <div class="tool-desc">Design everything from home — social posts, presentations, resumes, client work. No design degree needed.</div>
+        <a href="https://www.canva.com/join/spunkart" target="_blank" rel="noopener" class="tool-link">Design Free →</a>
+      </div>
+      <div class="tool-card">
+        <div class="tool-logo" style="background:rgba(255,153,0,.15)">📦</div>
+        <div class="tool-name">Amazon Business</div>
+        <div class="tool-badge badge-bonus">TAX SAVINGS</div>
+        <div class="tool-desc">Buy all your home office gear with business pricing, quantity discounts, and tax-exempt purchases.</div>
+        <a href="https://www.amazon.com/business/register?tag=spunk01-20" target="_blank" rel="noopener" class="tool-link">Open Account →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Side Hustles -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(255,214,10,.15);color:var(--gold)">💰</div>
+      <div>
+        <h2>Best WFH Side Hustles</h2>
+        <p>Real income streams you can run from your casa — ranked by earning potential</p>
+      </div>
+    </div>
+    <div class="earn-grid">
+      <div class="earn-card">
+        <div class="earn-rank">1</div>
+        <div class="earn-emoji">🎰</div>
+        <div class="earn-title">Crypto Gaming (Spunk.Bet)</div>
+        <div class="earn-desc">Play casino games and win free SPUNK runes. Zero cost to start, provably fair, instant crypto rewards.</div>
+        <div class="earn-potential">💸 FREE to play, win crypto daily</div>
+        <a href="https://spunk.bet" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Play Free Now →</a>
+      </div>
+      <div class="earn-card">
+        <div class="earn-rank">2</div>
+        <div class="earn-emoji">🔮</div>
+        <div class="earn-title">Prediction Markets</div>
+        <div class="earn-desc">Bet on real-world events at Kalshi. Sports, politics, economics — knowledge is profit from your home office.</div>
+        <div class="earn-potential">💸 $0 — unlimited upside</div>
+        <a href="https://kalshi.com/sign-up/?referral=SPUNKART&utm_source=referral&utm_medium=spunkart" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Start Predicting →</a>
+      </div>
+      <div class="earn-card">
+        <div class="earn-rank">3</div>
+        <div class="earn-emoji">✍️</div>
+        <div class="earn-title">Freelance on Fiverr</div>
+        <div class="earn-desc">Sell writing, design, coding, or any skill from your home office. Fiverr has millions of buyers worldwide.</div>
+        <div class="earn-potential">💸 $5 — $500+ per gig</div>
+        <a href="https://www.fiverr.com/s/spunkart" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Start Freelancing →</a>
+      </div>
+      <div class="earn-card">
+        <div class="earn-rank">4</div>
+        <div class="earn-emoji">🤖</div>
+        <div class="earn-title">Workflow Automation</div>
+        <div class="earn-desc">Build automations on Make.com and sell them to businesses. Zero-code, high-margin, completely remote.</div>
+        <div class="earn-potential">💸 $50 — $2,000+ per automation</div>
+        <a href="https://www.make.com/en/register?pc=spunk" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Build & Sell →</a>
+      </div>
+      <div class="earn-card">
+        <div class="earn-rank">5</div>
+        <div class="earn-emoji">🎨</div>
+        <div class="earn-title">AI Art & Design</div>
+        <div class="earn-desc">Use Leonardo AI to create images, then sell them on Fiverr, Etsy, or as NFTs. Low cost, high demand.</div>
+        <div class="earn-potential">💸 $10 — $500+ per project</div>
+        <a href="https://app.leonardo.ai/?via=spunkart" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Create & Sell →</a>
+      </div>
+      <div class="earn-card">
+        <div class="earn-rank">6</div>
+        <div class="earn-emoji">📈</div>
+        <div class="earn-title">Crypto Staking</div>
+        <div class="earn-desc">Buy crypto through Coinbase or Binance, stake it passively and earn yield while you sleep at home.</div>
+        <div class="earn-potential">💸 4% — 20%+ APY passive income</div>
+        <a href="https://www.coinbase.com/join/YAGES3X" target="_blank" rel="noopener" style="display:block;margin-top:12px;padding:8px;background:linear-gradient(135deg,rgba(191,90,242,.3),rgba(0,245,212,.3));border-radius:8px;text-align:center;font-size:.8rem;font-weight:700">Start Earning →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SpunkArt Empire -->
+  <section>
+    <div class="section-header">
+      <div class="section-icon" style="background:rgba(191,90,242,.15);color:var(--purple)">👑</div>
+      <div>
+        <h2>The SpunkArt Empire</h2>
+        <p>Every site in the network — explore, play, earn, discover</p>
+      </div>
+    </div>
+    <div class="empire-grid">
+      <a href="https://spunk.bet" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Bet</div><div class="e-desc">Free casino</div></a>
+      <a href="https://spunkart.com" target="_blank" rel="noopener" class="empire-site"><div class="e-name">SpunkArt.com</div><div class="e-desc">Main site</div></a>
+      <a href="https://pfp.best" target="_blank" rel="noopener" class="empire-site"><div class="e-name">PFP.Best</div><div class="e-desc">NFT avatars</div></a>
+      <a href="https://predict.horse" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Predict.Horse</div><div class="e-desc">Race markets</div></a>
+      <a href="https://spunk.wiki" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Wiki</div><div class="e-desc">Crypto wiki</div></a>
+      <a href="https://spunk.surf" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Surf</div><div class="e-desc">Web discovery</div></a>
+      <a href="https://spunk.casino" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Casino</div><div class="e-desc">Casino guide</div></a>
+      <a href="https://spunk.my" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.My</div><div class="e-desc">Brand hub</div></a>
+      <a href="https://spunk.best" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Best</div><div class="e-desc">Best picks</div></a>
+      <a href="https://spunk.baby" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Baby</div><div class="e-desc">Baby gear</div></a>
+      <a href="https://spunk.mom" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Mom</div><div class="e-desc">Mom life</div></a>
+      <a href="https://spunk.work" target="_blank" rel="noopener" class="empire-site"><div class="e-name">Spunk.Work</div><div class="e-desc">Business tools</div></a>
+      <a href="https://i13.fun" target="_blank" rel="noopener" class="empire-site"><div class="e-name">i13.fun</div><div class="e-desc">Link hub</div></a>
+    </div>
+  </section>
+
+  <!-- Tip Section -->
+  <div class="tip-section">
+    <div style="font-size:2rem;margin-bottom:10px">🏠</div>
+    <h2 style="margin-bottom:8px">Support Spunk.Casa</h2>
+    <p style="color:var(--muted);max-width:400px;margin:0 auto 20px;font-size:.9rem">This site is free, no paywalls, no subscriptions. Affiliate links fund the infrastructure. Every tip keeps the lights on.</p>
+    <button class="tip-btn" onclick="document.getElementById('tipModal').classList.add('open')">🏠 Tip the Casa</button>
+  </div>
+
+</div>
+
+<footer>
+  <div>
+    <a href="https://spunkart.com" target="_blank">SpunkArt.com</a>
+    <a href="https://x.com/SpunkArt13" target="_blank">@SpunkArt13</a>
+    <a href="https://spunk.bet" target="_blank">Spunk.Bet</a>
+    <a href="https://i13.fun" target="_blank">i13.fun</a>
+  </div>
+  <p style="margin-top:12px">© 2026 SpunkArt Empire • Affiliate links help fund this free resource • Amazon Associate (spunk01-20)</p>
+</footer>
+
+<script>
+// Visitor Tracker
+(function(){
+  if(window._vtrInit)return;window._vtrInit=true;
+  var DB='https://predict-network-ec767-default-rtdb.firebaseio.com';
+  var site=(location.hostname||'local').replace(/\./g,'_').replace(/[#$\[\]]/g,'_');
+  var sid='s'+Math.random().toString(36).slice(2)+Date.now().toString(36);
+  function ping(){fetch(DB+'/visitors/'+site+'/'+sid+'.json',{method:'PUT',body:JSON.stringify({ts:Date.now()})}).catch(function(){});}
+  function refresh(){fetch(DB+'/visitors/'+site+'.json?shallow=true').then(function(r){return r.json();}).then(function(d){var c=d?Object.keys(d).length:1;document.getElementById('vtr-count').textContent=Math.max(1,c);}).catch(function(){});}
+  function daily(){fetch(DB+'/hits/'+site+'/'+new Date().toISOString().slice(0,10)+'.json',{method:'POST',body:JSON.stringify({t:Date.now()})}).catch(function(){});}
+  ping();refresh();daily();
+  setInterval(function(){ping();refresh();},10000);
+})();
+// Tip Modal
+function closeTip(){document.getElementById('tipModal').classList.remove('open');}
+function copyBTC(){var a=document.getElementById('btcAddr').textContent.trim();navigator.clipboard.writeText(a).catch(function(){});document.getElementById('btcAddr').textContent='✓ Copied!';setTimeout(function(){document.getElementById('btcAddr').textContent=a;},2000);}
+document.getElementById('tipModal').addEventListener('click',function(e){if(e.target===this)closeTip();});
+</script>
+</body>
+</html>
